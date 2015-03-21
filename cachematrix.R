@@ -71,6 +71,8 @@
         ## b <- makeCacheMatrix(a)
         ## cacheSolve(b)
         
+        ## Note:  The sample below is sourced form http://www.mathsisfun.com/algebra/matrix-inverse.html around halfway down
+        ## you still have to do the final math but the inversion matrix is listed in the page to check functions
         ##A group took a trip on a bus, at $3 per child and $3.20 per adult for a total of $118.40. 
         ##They took the train back at $3.50 per child and $3.60 per adult for a total of $135.20.
         ##How many children, and how many adults?
