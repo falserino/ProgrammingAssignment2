@@ -1,8 +1,12 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
+
 ## This function creates a special "matrix" object
-## that can cache its inverse.
+## that can cache its inverse.  Execution Scripts are at the bottom
+## used the code from the Readme.md file and changed to matrix special types
+## Also added the solver function into the code to do the inversion of 
+## valid square matrixes passed to the makeCacheMatrix function
 
 
         makeCacheMatrix <- function(x = matrix()) {
@@ -30,18 +34,25 @@
 ## "matrix" returned by `makeCacheMatrix` above. If the inverse has
 ## already been calculated (and the matrix has not changed), then
 ## `cacheSolve` should retrieve the inverse from the cache.
+## Note:  If the value passed to the objects is not a square matrix 
+## you should recieve an appropriate system error.  This is expected operation...
 
 
         cacheSolve <- function(x = matrix(), ...) {
-                ## checks the value of m in cache - if empty it runs function matrix(x)
+                ## fills m with the list (x) value of getmatrix in cache.
+                ## if = NULL 
+                ## it runs function matrix(x) from console
+                ## otherwise it retrieves cached data
                 m <- x$getmatrix()
                 if(!is.null(m)){
                         message("getting cached data")
                         return(m)
                 }
+                ## fills data passed from console.
                 data <- x$get()
                 ## using the first position of solve for a square matrix inversion as b is empty
                 m <- solve(data, ...)
+                ##sets value of list(x) value of setmatrix with results of solver function.
                 x$setmatrix(m)
                 m
         }
